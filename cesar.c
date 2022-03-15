@@ -63,32 +63,38 @@ int makeKey(int key) // BASICAMENTE -> SE O NUMERO PASSADO FOR MAIOR QUE 26 A NO
 	}
 }
 
+char rotate(char palavra, int k)
+{
+  if((palavra> 90 || palavra< 65) && (palavra< 97 || palavra> 122))
+  {
+    printf("%c", palavra);
+  }
+  else{
+    for(int i=0, length=strlen(alphabeto);i<length;i++)
+      {
+        int chave = makeIndex(k,i);
+        if(palavra==alphabeto[i])
+        {
+          printf("%c", alphabeto[chave]);
+        }
+        else if(palavra==alphabetoMaior[i])
+        {
+          printf("%c", alphabetoMaior[chave]);
+        }
+      }
+  }
+}
+
 char criptografando(int key, char string[])
 {
-	char palavra[strlen(string) - 1];
+	char palavra[strlen(string)];
+  int index = makeKey(key);
+  printf("\nciphertext: ");
 	for (int i = 0, n = strlen(string); i < n; i++) // PERCORRE A STRING PASSADA
 	{
-		if ((string[i] > 90 || string[i] < 65) && (string[i] < 97 || string[i] > 122)) // SE NAO FOR UMA LETRA ->  PALAVRA[i] = STR$ING[i]
-		{
-			palavra[i] = string[i];
-		}
-		else
-		{
-			for (int k = 0, length = strlen(alphabeto); k < length; k++) // PRECORRE O ALFABETO
-			{
-				int index = makeIndex(makeKey(key), k);
-				if (string[i] == alphabeto[k]) // VE SE É MINUSCULA
-				{
-					palavra[i] = alphabeto[index];
-				}
-				else if (string[i] == alphabetoMaior[k]) // VE SE É MAISCULA
-				{
-					palavra[i] = alphabetoMaior[index];
-				}
-			}
-		}
+		rotate(string[i],index);
 	}
-	printf("\nciphertext: %s\n", palavra); // PRINTA A SAIDA DESAJADA !!OBS: AO DIGITAR POUCAS LETRAS, COMO 'a', RETORNA ALGO ESTRANHO;
+  return 0;
 }
 
 int main(int argc, string argv[])
