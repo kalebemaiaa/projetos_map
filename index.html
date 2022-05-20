@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRasXm30jv3bOfhVLjus-q-5XLTuX6cdJZCbg&usqp=CAU">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+                <form method="post" action="/" id="formulario">
+                    <div>
+                        <input placeholder="Digite seu nome" name="name" id="name" type="text">
+                        <input type = "text" name="month" id="month" placeholder="Digite o mês do seu aniversário (1..12)">
+                        <input type = "text" name="day" id="day" placeholder="Digite a dia do seu aniversário (1..31)">
+                    </div>
+                    <input id="enviar" type="submit" value="enviar">
+                </form>
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for i in range(tamanho)%}
+                        <tr>
+                            <td>{{data[i]["name"]}}</td>
+                            <td>{{data_aniversario[i]}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            document.querySelector("#enviar").onclick = (event)=>{
+                event.preventDefault()
+
+                const validando = ()=>{
+                    for(let i = 0; i< 3; i++){
+                        if(document.querySelectorAll("input")[i].value == ""){
+                            return false
+                        }
+                    }
+
+                    const mes = parseInt(document.querySelectorAll("input")[1].value)
+                    const dia = parseInt(document.querySelectorAll("input")[2].value)
+
+                    if( mes > 12 || mes < 1 || dia < 1 || isNaN(mes) || isNaN(dia)){
+                        alert("Data inválida!")
+                        return false
+                    }
+
+                    if((mes % 2 == 0 && dia > 31 ) || (mes % 2 == 1 && dia > 30) || (mes == 2 && dia > 28)){
+                        alert("Data inválida!")
+                        return false
+                    }
+
+                    return true;
+                }
+
+                if(validando()){
+                    document.querySelector("form").submit()
+                }
+                else{
+                    for(let k = 0; k< 3; k++){
+                        document.querySelectorAll("input")[k].value = ""
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

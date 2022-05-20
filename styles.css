@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body {
+    background-color:#6D214F;
+    color: #CAD3C8;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-shadow:2px 2px #2C3A47;
+    margin: 0px;
+    padding : 0px;
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    width: 90%;
+}
+
+.header {
+    color: #CAD3C8;
+    text-shadow: -2px 2px #2C3A47;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.section {
+    padding: 0.5rem 2rem 1rem 2rem;
+}
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 48px;
+}
+
+button, input[type="submit"] {
+    font-size:20px;
+    line-height: 1.5;
+    text-shadow: 1px 1px #000;
+    background-color: #ffcccc;
+    color: #6D214F;
+    border: 1px solid #4b4b4b;
+    margin-top: 25px;
+    text-align: center;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    vertical-align: middle;
+}
+
+input[type="text"], input[type="number"] {
+    width: 30%;
+    height: 40px;
+    font-size: 15px;
+    box-shadow: 2px 2px #2C3A47;
+}
+
+table {
+    background-color: transparent;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border: none;
+    box-shadow: 2px 2px #F8EFBA;
+    color: #F8EFBA;
+    background-color: #82589F;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: rgb(179, 208, 255, 0.3);
+}
+
+input{
+    border: none;
+    line-height: 1.8;
+    background-color: #82589F;
+    color: #CAD3C8;
+    width: 150px;
+    height: 30px;
+    color: #F8EFBA;
+}
+
+input::placeholder {
+  color: #F8EFBA;
+  text-align: center;
+  opacity: 1;
+  font-family: 'Roboto Mono', monospace;
+}
+
+:-ms-input-placeholder {
+      color: #F8EFBA;
+      text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+::-ms-input-placeholder {
+  color: #F8EFBA;
+  text-align: center;
+}
+
+h2{
+    font-size: 30px;
+}
