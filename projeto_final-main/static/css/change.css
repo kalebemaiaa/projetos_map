@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #1B1464, #D980FA);
+  height: 500px;
+  font-family: 'Press Start 2P', cursive;
+  color: #EAB543;
+  text-shadow:-1px 2px #F8EFBA;
+  height: 90%;
+}
+
+h1{
+  font-size: 350%;
+}
+
+.box_container{
+  display: none;
+  flex-direction: column;
+  background-color: #f53b57;
+  height: 45%;
+  width: 70%;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+}
+.container_container{
+  align-items:center;
+  justify-content: center;
+  margin: 10px;
+  height: 200px;
+  width: 200px;
+  display: flex;
+}
+
+.container_container:hover{
+  cursor: pointer;
+}
+
+.container_borders{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.border_left_top{
+  border-top: dashed #D980FA 10px;
+  border-left: dashed #FDA7DF 10px;
+  width: 60%;
+  height: 30%;
+}
+
+.image_teste{
+  position: absolute;
+  width: 10%;
+  height: 15%;
+}
+
+.image_teste:hover{
+  animation: pulse 700ms ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%{
+    transform: scale(1.01);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1.01);
+  }
+}
+
+.show{
+  display:flex;
+  width:100%;
+  justify-content: space-evenly;
+}
+
+.border_left_bottom{
+  border-bottom: dashed #FDA7DF  10px;
+  border-left: dashed #D980FA 10px;
+  width: 60%;
+  height: 30%;
+}
+.border_right_top{
+  border-top: dashed  #FDA7DF 10px;
+  border-right: dashed #D980FA  10px;
+  width: 60%;
+  height: 30%;
+  margin-left: auto;
+}
+
+.border_right_bottom{
+  border-bottom: dashed #D980FA 10px;
+  border-right: dashed #FDA7DF  10px;
+  width: 60%;
+  height: 30%;
+  margin-left: auto;
+}
+
+#btn{
+  border: none;
+  height: 80px;
+  width: 450px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
+  margin-top: 40px;
+  background-color: #1B1464;
+  color: #fff;
+  text-shadow: -2px 2px #12CBC4;
+}
+
+#btn:hover{
+  box-shadow: -2px 2px 20px #FDA7DF;
+  cursor: pointer;
+  transform:scale(1.05);
+}
+
+.fundo_preto{
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  z-index: 1;
+  opacity: .7;
+  display: none;
+}

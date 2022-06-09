@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+  background: linear-gradient(45deg, #1B1464, #D980FA);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  background-color: #1e272e;
+  height: 50%;
+  width: 70%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2{
+  color: #FFC312;
+  text-shadow:-1px 2px #fd79a8;
+  font-size: 50px;
+}
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #12CBC4;
+  color: #ED4C67;
+  height: 100%;
+  width: 30%;
+  text-shadow: 1px 1px #5758BB;
+  margin: 3px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 100%;
+  border: none;
+  border-radius: 1px;
+  animation: pulse 1000ms linear infinite;
+}
+
+@keyframes pulse {
+  0%{
+    transform: scale(1.01);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1.01);
+  }
+}
+
+button:hover{
+  cursor: pointer;
+  box-shadow: 1px 1px 20px #FF4081;
+}
+
+.container{
+  width: 90%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+#name_user{
+    font-size:20px;
+    background-color: #ED4C67;
+    color: #fff;
+    margin-right: 30px;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+}
+#name_user::placeholder {
+  color: #F8EFBA;
+  opacity: 0.7;
+}
+
+#name_user:-ms-input-placeholder {
+  color: #F8EFBA;
+  opacity: 0.7;
+}
+
+#name_user::-ms-input-placeholder {
+  color: #F8EFBA;
+  opacity: 0.7;
+}
